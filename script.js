@@ -1,20 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+    let params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
 
     if (id) {
-        // Hvis der er et ID i URL'en, vis detaljevisning
         fetch(`data/${id}.json`)
             .then(response => response.json())
             .then(data => displayDestinationDetails(data))
             .catch(error => console.error("Fejl ved hentning af data:", error));
     } else {
-        // Ellers vis listevisning
         fetch("data/destinations.json")
-        .then(response => response.json())
-        .then(data => displayDestinationList(data.destinations)) // Tilføj .destinations
-        .catch(error => console.error("Fejl ved hentning af data:", error));
-     
+            .then(response => response.json())
+            .then(data => displayDestinationList(data.destinations))
+            .catch(error => console.error("Fejl ved hentning af data:", error));
+
+        populateApartments();
     }
 });
 
@@ -24,23 +23,48 @@ function displayDestinationList(destinations) {
 
     destinations.forEach(dest => {
         const item = document.createElement("div");
-        item.classList.add("destination-item");
+        item.classList.add("box");
         item.innerHTML = `
             <img src="img/${dest.image}" alt="${dest.name}" class="destination-img">
-            <h2>${dest.name}</h2>
-            <p>${dest.shortDescription}</p>
-            <a href="destination.html?id=${dest.id}" class="details-link">Se mere</a>
+            <div class="content">
+                <p>${dest.shortDescription} <i class="fa-regular fa-heart"></i></p>
+                <a href="destination.html?id=${dest.id}" class="details-link">MORE</a>
+            </div>
         `;
         container.appendChild(item);
     });
 }
 
 function displayDestinationDetails(destination) {
-    const container = document.getElementById("destination-details");
+    const container = document.getElementById("destination-list");
     container.innerHTML = `
         <h1>${destination.name}</h1>
         <img src="img/${destination.image}" alt="${destination.name}" class="destination-img">
         <p>${destination.description}</p>
         <a href="index.html">Tilbage til listen</a>
     `;
+}
+
+function populateApartments() {
+    const grid = document.getElementById("apartment-grid");
+    grid.innerHTML = "";
+
+    const apartments = [
+        { image: "img/apartment1.jpg", title: "Apartment 1" },
+        { image: "img/apartment2.jpg", title: "Apartment 2" },
+        { image: "img/apartment3.jpg", title: "Apartment 3" },
+        { image: "img/apartment4.jpg", title: "Apartment 4" }
+    ];
+
+    apartments.forEach(apartment => {
+        const box = document.createElement("div");
+        box.classList.add("box");
+        box.innerHTML = `
+            <img src="${apartment.image}" alt="${apartment.title}" class="apartment-img">
+            <div class="content">
+                <p>${apartment.title}</p>
+            </div>
+        `;
+        grid.appendChild(box);
+    });
 }

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter";
+    margin: 0;
+    padding: 20px;
+}
+
+.destination-list {
+    width: 100%;
+}
+
+.details-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 8px 12px;
+    background-color: #008CBA;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Inter";
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* 🚀 Grid med 4 billeder (2 kolonner x 2 rækker) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolonner */
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* 🚀 Billede-bokse */
+.box {
+    width: 288px;
+    height: 360px;
+    overflow: hidden;
+    background-color: #cef9ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Sørger for, at tekst + link er under billedet */
+    align-items: center;
+    text-align: center;
+}
+
+/* 🚀 Billede */
+.box img {
+    width: 100%;
+    height: 288px;
+    object-fit: cover;
+    border-bottom: 2px solid #000;
+}
+
+/* 🚀 Flex-container til tekst + knap */
+.box .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centrerer tekst og link */
+    flex-grow: 1; /* Sørger for, at denne del fylder resten af boksen */
+    padding: 10px;
+}
