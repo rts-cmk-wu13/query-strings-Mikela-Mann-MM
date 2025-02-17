@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter";
+    margin: 0;
+}
+
+.destination-list {
+    width: 100%;
+}
+
+h1 {
+    font-family: "Inter";
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+/* 🚀 Billede */
+.box img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+/* 🚀 Flex-container til tekst + knap */
+.content {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    margin-left: 17px;
+    align-items: center;
+    justify-content: space-between; /* Centrerer tekst og link */
+    padding: 10px;
+}
