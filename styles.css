@@ -15,20 +15,23 @@ body {
 }
 
 h1 {
+    margin: 37px 0 25px 120px;
     font-family: "Inter";
     font-size: 48px;
     font-weight: bold;
-    margin-bottom: 25px;
 }
 
 /* 🚀 Grid med 4 billeder (2 kolonner x 2 rækker) */
 #destination-list {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
     grid-template-rows: repeat(2, auto);  /* 2 rækker */
     gap: 16px;
     justify-items: center; /* Centrerer indholdet horisontalt */
     width: 100%;
+    padding-bottom: 44px;
 }
 
 /* 🚀 Billede-bokse */
@@ -56,4 +59,15 @@ h1 {
     align-items: center;
     justify-content: space-between; /* Centrerer tekst og link */
     padding: 10px;
+}
+
+.fa-solid, button {
+    transition: color 0.3s ease-in-out;
+    border: none;
+    background-color: #cef9ff;
+    color: black;
+}
+
+.fa-solid.favorit {
+    color: red; /* Rød når markeret som favorit */
 }

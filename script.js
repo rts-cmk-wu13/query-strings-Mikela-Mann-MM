@@ -27,7 +27,7 @@ function displayDestinationList(destinations) {
         item.innerHTML = `
             <img src="img/${dest.image}" alt="${dest.name}" class="destination-img">
             <div class="content">
-                <p>${dest.shortDescription}<i class="fa-regular fa-heart"></i></p>
+            <button class="card_favoritebtn" data-favid="${dest.id}"><i class="fa-solid fa-heart"></i></button>
                 <a href="destination.html?id=${dest.id}" class="details-link">MORE</a>
             </div>
         `;
@@ -68,3 +68,5 @@ function populateApartments() {
         grid.appendChild(box);
     });
 }
+
+
