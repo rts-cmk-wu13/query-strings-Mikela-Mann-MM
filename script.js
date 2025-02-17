@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(data => displayDestinationList(data.destinations))
             .catch(error => console.error("Fejl ved hentning af data:", error));
-
-        populateApartments();
     }
 });
 
@@ -45,28 +43,6 @@ function displayDestinationDetails(destination) {
     `;
 }
 
-function populateApartments() {
-    const grid = document.getElementById("apartment-grid");
-    grid.innerHTML = "";
 
-    const apartments = [
-        { image: "img/apartment1.jpg", title: "Apartment 1" },
-        { image: "img/apartment2.jpg", title: "Apartment 2" },
-        { image: "img/apartment3.jpg", title: "Apartment 3" },
-        { image: "img/apartment4.jpg", title: "Apartment 4" }
-    ];
-
-    apartments.forEach(apartment => {
-        const box = document.createElement("div");
-        box.classList.add("box");
-        box.innerHTML = `
-            <img src="${apartment.image}" alt="${apartment.title}" class="apartment-img">
-            <div class="content">
-                <p>${apartment.title}</p>
-            </div>
-        `;
-        grid.appendChild(box);
-    });
-}
 
 
