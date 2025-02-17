@@ -3,7 +3,6 @@
 body {
     font-family: "Inter";
     margin: 0;
-    padding: 20px;
 }
 
 .destination-list {
@@ -13,12 +12,6 @@ body {
 .details-link {
     text-decoration: none;
     color: black;
-    font-weight: bold;
-    padding: 8px 12px;
-    background-color: #008CBA;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
 }
 
 h1 {
@@ -29,27 +22,22 @@ h1 {
 }
 
 /* 🚀 Grid med 4 billeder (2 kolonner x 2 rækker) */
-.grid {
+#destination-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 kolonner */
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
+    grid-template-rows: repeat(2, auto);  /* 2 rækker */
     gap: 16px;
-    justify-content: center;
-    align-items: center;
-    max-width: 640px;
-    margin: 0 auto;
+    justify-items: center; /* Centrerer indholdet horisontalt */
+    width: 100%;
 }
 
 /* 🚀 Billede-bokse */
 .box {
     width: 288px;
     height: 360px;
-    overflow: hidden;
     background-color: #cef9ff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; /* Sørger for, at tekst + link er under billedet */
-    align-items: center;
-    text-align: center;
 }
 
 /* 🚀 Billede */
@@ -57,15 +45,15 @@ h1 {
     width: 100%;
     height: 288px;
     object-fit: cover;
-    border-bottom: 2px solid #000;
 }
 
 /* 🚀 Flex-container til tekst + knap */
 .box .content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin-right: 30px;
+    margin-left: 17px;
     align-items: center;
-    justify-content: center; /* Centrerer tekst og link */
-    flex-grow: 1; /* Sørger for, at denne del fylder resten af boksen */
+    justify-content: space-between; /* Centrerer tekst og link */
     padding: 10px;
 }

@@ -27,7 +27,7 @@ function displayDestinationList(destinations) {
         item.innerHTML = `
             <img src="img/${dest.image}" alt="${dest.name}" class="destination-img">
             <div class="content">
-                <p>${dest.shortDescription} <i class="fa-regular fa-heart"></i></p>
+                <p>${dest.shortDescription}<i class="fa-regular fa-heart"></i></p>
                 <a href="destination.html?id=${dest.id}" class="details-link">MORE</a>
             </div>
         `;
