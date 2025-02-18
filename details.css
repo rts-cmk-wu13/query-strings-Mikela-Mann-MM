@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter";
+    margin: 0;
+}
+
+.destination-list {
+    width: 100%;
+}
+
+.box {
+    display: flex;
+}
+
+.image_box {
+    position: relative; 
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.destination-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card__favoritebtn {
+    display: flex;
+    position: absolute;
+    top: 50px; 
+    right: 70px; 
+    width: 34px; 
+    z-index: 10; 
+    cursor: pointer;
+    color: black; /* Standardfarve */
+    transition: color 0.3s ease-in-out;
+}
+
+button {
+    background-color: #00000000;
+    border: none;
+}
+
+i {
+    padding-right: 5px;
+}
+    
+.card__favoritebtn--selected {
+    color: red; /* Rød når markeret som favorit */
+}
+
+.content {
+    width: 483px;
+    margin: 150px auto;
+}
+
+h1 {
+    font-family: "Inter";
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.liste_overskrift {
+   margin-top: 35px;
+   font-weight: 700; 
+}
+
+p {
+    font-size: 16px;
+    margin: 0 auto;
+    width: 461px;
+}
+
+/* Billede */
+.box img {
+    width: 100%;
+    max-width: 712px;
+    height: 832px;
+    object-fit: cover;
+    margin: 32px 0;
+
+}
+
+
+ /* Mobilvenlig styling */
+@media (max-width: 768px) {
+
+    h1 {
+        margin: 20px;
+        font-size: 28px;
+    }
+
+    h3, h4 {
+        font-size: 18px;
+    }
+
+    .image_box {
+        display: block;
+    }
+
+    .box, .content {
+        display: block;
+        width: 100%;
+        max-width: 768px;
+    }
+
+    .card__favoritebtn {
+        top: 50px; 
+        right: 150px; 
+        width: 30px;
+    }
+
+    .content {
+        margin-top: 20px;
+    }
+
+    li {
+        margin-left: 135px;
+    }
+   
+}

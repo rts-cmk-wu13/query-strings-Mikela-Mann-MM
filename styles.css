@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: "Inter";
+    margin: 0;
+}
+
+.destination-list {
+    width: 100%;
+}
+
+.details-link {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    font-family: "Inter";
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#destination-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Gør layoutet responsivt */
+    gap: 16px;
+    justify-items: center;
+    width: 100%;
+    padding-bottom: 44px;
+}
+
+/* Billede-bokse */
+.box {
+    width: 288px;
+    height: 360px;
+    background-color: #cef9ff;
+    display: flex;
+    flex-direction: column; /* Sørger for, at tekst + link er under billedet */
+}
+
+/* Billede */
+.box img {
+    width: 100%;
+    height: 288px;
+    object-fit: cover;
+}
+
+/* Flex-container til tekst + knap */
+.box .content {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    margin-left: 17px;
+    align-items: center;
+    justify-content: space-between; /* Centrerer tekst og link */
+    padding: 10px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.card__favoritebtn, button {
+    transition: color 0.3s ease-in-out;
+    border: none;
+    background-color: #cef9ff;
+    color: black;
+}
+
+.card__favoritebtn--selected {
+    color: red; /* Rød når markeret som favorit */
+}
+
+
+/* Mobilvenlig styling */
+@media (max-width: 768px) {
+    h1 {
+        margin: 20px;
+        font-size: 32px;
+    }
+
+    #destination-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .box {
+        width: 90%; 
+        height: auto;
+    }
+
+    .box img {
+        height: 200px;
+    }
+
+    .box .content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .content {
+        justify-items: center;
+    }
+}
