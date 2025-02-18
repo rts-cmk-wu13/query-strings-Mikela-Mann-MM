@@ -14,7 +14,7 @@ function deleteFromLocalStorage(key) {
 
 }
 
-/*
+
 
 let success = saveToLocalStorage("favorites", [1,5,8])
 
@@ -24,4 +24,3 @@ let myFavorites = readFromLocalStorage("favorites");
 console.log(myFavorites); 
 
 let deletedsuccess = deleteFromLocalStorage("favorites");
-*/ 

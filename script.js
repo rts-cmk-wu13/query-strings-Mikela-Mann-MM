@@ -1,3 +1,7 @@
+let favorites =  readFromLocalStorage("favorites") || []
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     let params = new URLSearchParams(window.location.search);
     let id = params.get("id");
@@ -25,13 +29,35 @@ function displayDestinationList(destinations) {
         item.innerHTML = `
             <img src="img/${dest.image}" alt="${dest.name}" class="destination-img">
             <div class="content">
-            <button class="card_favoritebtn" data-favid="${dest.id}"><i class="fa-solid fa-heart"></i></button>
+            <button class="card__favoritebtn ${favorites.includes(dest.id.toString()) ? "card__favoritebtn--selected" : ""}" data-favid="${dest.id}"><i class="fa-solid fa-heart"></i></button>
                 <a href="destination.html?id=${dest.id}" class="details-link">MORE</a>
             </div>
         `;
-        container.appendChild(item);
+        container.appendChild(".card__favoritebtn").forEach(function(button){
+
+            button.addEventListener("click", function(event) {
+                let currentId = event.target.closest("button").dataset.favid;
+                if (favorites.includes(currentId)) {
+                    let newFavorites = favorites.filter(id => id != currentId)
+                    favorites = newFavorites
+                    event.target.classList.remove("card__favoritebtn--selected")
+                } else {
+                    favorites.push(currentId)
+                    event.target.classList.add("card__favoritebtn--selected")
+                }
+                saveToLocalStorage("favorites", favorites)
+            })
+        })
+        
+        
     });
+
+    container.querySelector()
+
 }
+
+
+
 
 function displayDestinationDetails(destination) {
     const container = document.getElementById("destination-list");

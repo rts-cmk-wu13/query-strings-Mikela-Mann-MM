@@ -61,13 +61,13 @@ h1 {
     padding: 10px;
 }
 
-.fa-solid, button {
+.card__favoritebtn, button {
     transition: color 0.3s ease-in-out;
     border: none;
     background-color: #cef9ff;
     color: black;
 }
 
-.fa-solid.favorit {
+.card__favoritebtn--selected {
     color: red; /* Rød når markeret som favorit */
 }
