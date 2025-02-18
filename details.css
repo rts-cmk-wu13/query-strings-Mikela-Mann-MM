@@ -14,7 +14,7 @@ body {
 }
 
 .image_box {
-    position: relative; /* Gør det muligt at positionere ikon relativt til billedet */
+    position: relative; 
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -52,7 +52,7 @@ i {
 
 .content {
     width: 483px;
-    margin: 221px auto;
+    margin: 150px auto;
 }
 
 h1 {
@@ -99,6 +99,7 @@ p {
 
  /* Mobilvenlig styling */
 @media (max-width: 768px) {
+
     h1 {
         margin: 20px;
         font-size: 28px;
@@ -108,11 +109,14 @@ p {
         font-size: 18px;
     }
 
+    .image_box {
+        display: block;
+    }
+
     .box, .content {
         display: block;
-        -width: 100%;
-        max-width: 100%;
-        margin: 0 auto; 
+        width: 100%;
+        max-width: 768px;
     }
 
     .card__favoritebtn {
@@ -122,7 +126,11 @@ p {
     }
 
     .content {
-        width: 100%; 
         margin-top: 20px;
     }
+
+    li {
+        margin-left: 135px;
+    }
+   
 }
