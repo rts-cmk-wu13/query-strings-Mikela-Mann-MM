@@ -25,21 +25,28 @@ body {
     display: block;
 }
 
-.fa-solid {
+.card__favoritebtn {
     display: flex;
     position: absolute;
-    top: 32px; 
-    right: 31px; 
+    top: 50px; 
+    right: 70px; 
     width: 34px; 
     z-index: 10; 
     cursor: pointer;
-    color: gray; /* Standardfarve */
+    color: black; /* Standardfarve */
     transition: color 0.3s ease-in-out;
 }
+
+button {
+    background-color: #00000000;
+    border: none;
+}
+
+i {
+    padding-right: 5px;
+}
     
-
-
-.fa-solid.favorit {
+.card__favoritebtn--selected {
     color: red; /* Rød når markeret som favorit */
 }
 
@@ -89,3 +96,33 @@ p {
 
 }
 
+
+ /* Mobilvenlig styling */
+@media (max-width: 768px) {
+    h1 {
+        margin: 20px;
+        font-size: 28px;
+    }
+
+    h3, h4 {
+        font-size: 18px;
+    }
+
+    .box, .content {
+        display: block;
+        -width: 100%;
+        max-width: 100%;
+        margin: 0 auto; 
+    }
+
+    .card__favoritebtn {
+        top: 50px; 
+        right: 150px; 
+        width: 30px;
+    }
+
+    .content {
+        width: 100%; 
+        margin-top: 20px;
+    }
+}
